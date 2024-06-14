@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Formulário CRP-01</title>
+</head>
+<body>
+    <h2>Formulário de Denúncia</h2>
+    <p>Atenção: O preenchimento dos campos obrigatórios(*) é imprescindível para o envio da representação.</p>
+
+    <div>
+        <label>1. Dados de Identificação da(o) Representante</label>
+        <button onclick="Representante()">Adcionar representante</button>
+    </div>
+
+    <div>
+        <label>Tem procurador(a) *</label>
+        <fomr>
+            <br>
+            <input type="button">
+            <label for="fsim" id="fsim">Sim</label>
+            <br>
+            <input type="button">
+            <label for="fnao" id="fnao">Não</label>
+        </fomr>
+    </div>
+
+    <div>
+        <label>2. Dados de Identificação da(o) Representada(o)</label>
+        <button>Adcionar representado(a)</button>
+    </div>
+    <div>
+        <label>3. As Resoluções CFP n° 011/2019 (CPD), CFP nº 07/2016 e CRP-08 n° 008/2017 normatizam a Mediação e outros meios de solução consensual de conflitos junto aos processos éticos. O interesse na Mediação poderá ser suscitado em qualquer fase processual. Para saber mais, <a href="https://www.crp-01.org.br/page_180/Den%C3%BAncias">clique aqui</a>.
+            Neste momento, há interesse em participar de Mediação com a(o) psicóloga(do) representada(o)?
+        </label>
+        <label>
+            Neste momento, há interesse em participar de Mediação com a(o) psicóloga(do) representada(o)?
+            <fomr>
+                <br>
+                <input type="button">
+                <label for="fsim" id="fsim">Sim</label>
+                <br>
+                <input type="button">
+                <label for="fnao" id="fnao">Não</label>
+            </fomr>
+        </label>
+    </div>
+
+    <div>
+        <label>
+            4. Descrição dos fatos – descreva o ocorrido e seu contexto, destacando as condutas da(o) Psicóloga(o) que entende terem sido inadequadas no exercício de sua profissão. Informe o nome da instituição ou instituições em que ocorreu ou ocorreram o(s) fato(s) e o nome de outras(os) profissionais envolvidas(os) (se souber).
+            <fomr>
+                <br>
+                <input type="button">
+                <label for="fsim" id="fsim">Sim</label>
+                <br>
+                <input type="button">
+                <label for="fnao" id="fnao">Não</label>
+            </fomr>
+        </label>
+        <p>Como deseja apresentar a descrição do(s) Fato(s)*</p>
+        <fomr>
+            <br>
+            <input type="button">
+            <label for="fsim" id="fsim">Digitar descrição do(s) Fato(s)*</label>
+            <br>
+            <input type="button">
+            <label for="fnao" id="fnao">Anexar descrição do(s) Fato(s)</label>
+        </fomr>
+    </div>
+
+    <div>
+        <label>
+            5. Provas documentais – Conforme definição do CPD, prova documental é qualquer documento ou material utilizado para provar determinado fato (registro feito mediante escritos, fotografias, filmagens, gravações, etc).
+            <h6>limite de 10Mb por arquivo</h6>
+            <input type="file">
+        </label>
+    </div>
+
+    <div>
+        <label>
+            6. Prova testemunhal – depoimento de pessoa(s) a respeito de fatos relevantes para o julgamento, com a finalidade de prová-los. O(A) representante poderá arrolar até 03 (três) testemunhas do(s) fato(s), se houver.
+            <p>Há testemunas?</p>
+            <fomr>
+                <br>
+                <input type="button">
+                <label for="fsim" id="fsim">Sim</label>
+                <br>
+                <input type="button">
+                <label for="fnao" id="fnao">Não</label>
+            </fomr>
+        </label>
+    </div>
+
+    <button type="button">Enviar</button>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
