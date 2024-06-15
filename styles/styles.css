@@ -1,3 +1,7 @@
 .representante__forms {
     display: none;
 }
+
+.campo__obrigatorio {
+    color: red;
+}

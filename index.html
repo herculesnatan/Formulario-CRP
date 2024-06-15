@@ -19,15 +19,51 @@
         </h5>
         <button id="botao__representante">Clique para adicionar o representante</button>
         <form id="dados__representante" class="representante__forms">
-            <input type="text" id="dados__representante__nome"> <!--Nome completo-->
-            <input type="text" id="dados__representante__nome__social"> <!--Nome social-->
-            <input type="text" id="dados__representante__nascimento"> <!--Data de nascimento-->
-            <input type="text" id="dados__representante__RG"> <!--Número de RG-->
-            <input type="text" id="dados__representante__CPF"> <!--Número CFP-->
-            <input type="text" id="dados__representante__endereco"> <!--Endereço-->
-            <input type="text" id="dados__representante__CEP"> <!--CEP-->
-            <input type="text" id="dados__representante__telefone"> <!--Telefone-->
-            <input type="text" id="dados__representante__email"> <!--Email-->
+            <!--Nome completo-->
+            <label for="dados__representante__nome">Nome completo</label>
+            <input type="text" id="dados__representante__nome">
+            <!--Nome social--> 
+            <label for="dados__representante__nome__social">Nome Social</label>
+            <input type="text" id="dados__representante__nome__social">
+            <!--Data de nascimento--> 
+            <label for="dados__representante__nascimento">Data de nascimento</label>
+            <input type="text" id="dados__representante__nascimento">
+            <!--Número de RG-->
+            <label for="dados__representante__RG">RG</label> 
+            <input type="text" id="dados__representante__RG">
+            <!--Número CFP--> 
+            <label for="dados__representante__CPF">CPF</label>
+            <input type="text" id="dados__representante__CPF">
+            <!--Endereço--> 
+            <label for="dados__representante__endereco">Endereço</label>
+            <input type="text" id="dados__representante__endereco">
+            <!--CEP-->
+            <label for="dados__representante__CEP">CEP</label> 
+            <input type="text" id="dados__representante__CEP"> 
+            <!--Telefone-->
+            <label for="dados__representante__telefone">Telefone</label>
+            <input type="text" id="dados__representante__telefone"> 
+            <!--Email-->
+            <label for="dados__representante__email">Email</label>
+            <input type="text" id="dados__representante__email"> 
+        </form>
+    </div>
+
+    <div class="procurador">
+        <h5>Tem Porcurador(a) <strong class="campo__obrigatorio">*</strong></h5>
+        <label id="tem__procurador">
+            <input type="radio"> Sim
+        </label id="sem__procurador">
+        <label>
+            <input type="radio"> Não
+        </label>
+    </div>
+
+    <div id="procurador__forms">
+        <h6>Formulário Procurador</h6>
+        <form>
+            <label for="nome__procurador">Nome completo</label>
+            <input type="text" id="nome__procurador" name="nome__procurador">
         </form>
     </div>
     <script src="app.js" defer></script>
