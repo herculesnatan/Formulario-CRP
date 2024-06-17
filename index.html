@@ -83,6 +83,52 @@
 
         </form>
     </div>
+    <div>
+        <h5>
+            3. As Resoluções CFP n° 011/2019 (CPD), CFP nº 07/2016 e CRP-08 n° 008/2017 normatizam a Mediação e outros meios de solução consensual de conflitos junto aos processos éticos.
+             O interesse na Mediação poderá ser suscitado em qualquer fase processual. Para saber mais, <a href="https://www.crp-01.org.br/">clique aqui</a>.
+Neste mo    mento, há interesse em participar de Mediação com a(o) psicóloga(do) representada(o)?
+        </h5>
+        <label id="sim__mediacao">
+            <input type="radio"> Sim
+        </label>
+        <label id="nao__mediacao">
+            <input type="radio"> Não
+        </label>
+    </div>
+
+    <div class="descricao__fatos">
+        <label for="documento__texto">Digitar descrição do(s) Fato(s)</label>
+        <input type="text" id="documento__texto">
+        <label for="documento__anexo">Anexar descrição do(s) Fato(s)</label>
+        <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
+    </div>
+
+    <div class="provas__documentais">
+        <h5>
+            5. Provas documentais – Conforme definição do CPD, prova documental é qualquer documento ou material utilizado para provar 
+            determinado fato (registro feito mediante escritos, fotografias, filmagens, gravações, etc).
+        </h5>
+        <p>limite de 10Mb por arquivo</p>
+        <label for="material__prova">Selecione os arquivos</label>
+        <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
+    </div>
+
+    <div class="testetunhas">
+        <h5>
+            6. Prova testemunhal – depoimento de pessoa(s) a respeito de fatos relevantes para o julgamento, com a finalidade de prová-los.
+             O(A) representante poderá arrolar até 03 (três) testemunhas do(s) fato(s), se houver.
+            Há testetunhas?
+        </h5>
+        <form>
+            <label id="tem__testemunha">
+                <input type="radio"> Sim
+            </label>
+            <label id="sem__testemunha">
+                <input type="radio"> Não
+            </label>
+        </form>
+    </div>
     <script src="app.js" defer></script>
 </body>
 </html>
