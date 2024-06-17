@@ -82,6 +82,7 @@
             <!--Documento Procurador-->
             <label type="file" for="documento__procurador">Documento</label>
             <input type="file"  required accept="image/*, application/pdf" id="documento__procurador">
+            <button type="submit">Adicionar Procurador</button>
 
         </form>
     </div>
@@ -130,7 +131,6 @@ Como deseja apresentar a descrição do(s) Fato(s)*
     <div class="testetunhas">
         <h5>
             6. Prova testemunhal – depoimento de pessoa(s) a respeito de fatos relevantes para o julgamento, com a finalidade de prová-los.
-             O(A) representante poderá arrolar até 03 (três) testemunhas do(s) fato(s), se houver.
             Há testetunhas?
         </h5>
         <form>
@@ -140,6 +140,40 @@ Como deseja apresentar a descrição do(s) Fato(s)*
             <label id="sem__testemunha">
                 <input type="radio"> Não
             </label>
+        </form>
+        <form id="dados__testemunha" class="testemunha__forms">
+            <!--Nome completo-->
+            <label for="dados__testemunha__nome">Nome completo</label>
+            <input type="text" id="dados__testemunha__nome">
+            <!--Nome social--> 
+            <label for="dados__testemunha__nome__social">Nome Social</label>
+            <input type="text" id="dados__testemunha__nome__social">
+            <!--Data de nascimento--> 
+            <label for="dados__testemunha__nascimento">Data de nascimento</label>
+            <input type="text" id="dados__testemunha__nascimento">
+            <!--Número de RG-->
+            <label for="dados__testemunha__RG">RG</label> 
+            <input type="text" id="dados__testemunha__RG">
+            <!--Número CFP--> 
+            <label for="dados__testemunha__CPF">CPF</label>
+            <input type="text" id="dados__testemunha__CPF">
+            <!--Endereço--> 
+            <label for="dados__testemunha__endereco">Endereço</label>
+            <input type="text" id="dados__testemunha__endereco">
+            <!--CEP-->
+            <label for="dados__testemunha__CEP">CEP</label> 
+            <input type="text" id="dados__testemunha__CEP"> 
+            <!--Telefone-->
+            <label for="dados__testemunha__telefone">Telefone</label>
+            <input type="text" id="dados__testemunha__telefone"> 
+            <!--Email-->
+            <label for="dados__testemunha__email">Email</label>
+            <input type="email" id="dados__testemunha__email">
+            <!--Adicionar documento-->
+            <label for="dados__testemunha__documento">Documento</label>
+            <input type="file" id="dados__testemunha__documento"> 
+            <!--Botão de adicionar representante-->
+            <button type="submit">Adicionar testemunha</button>
         </form>
     </div>
 
