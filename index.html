@@ -57,11 +57,12 @@
     <div class="procurador">
         <h5>Tem Procurador(a) <strong class="campo__obrigatorio">*</strong></h5>
         <label id="tem__procurador">
-            <input type="radio"> Sim
-        </label>
-        <label id="sem__procurador">
-            <input type="radio"> Não
-        </label>
+            <input type="radio" name="tem__procurador" value="sim__procurador" onchange="toggleForm()"> Sim
+          </label>
+          <label>
+            <input type="radio" name="tem__procurador" value="nao__procurador" onchange="toggleForm()" checked> Não
+          </label>
+          
     </div>
 
     <div id="procurador__forms" class="add__procurador">

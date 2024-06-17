@@ -11,6 +11,16 @@ function abrirForms() {
     }
 }
 
+function toggleForm() {
+    var radio = document.querySelector('input[name="tem__procurador"]:checked');
+    var form = document.getElementById('procurador__forms');
+    
+    if (radio.value === "sim__procurador") {
+      form.style.display = 'block'; // Mostra o formulário
+    } else {
+      form.style.display = 'none'; // Oculta o formulário
+    }
+  }
 
 
 // Capturar evento 

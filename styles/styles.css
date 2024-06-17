@@ -2,3 +2,10 @@
     display: none;
 }
 
+.add__procurador {
+    display: none; /* Oculta por padrão */
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
