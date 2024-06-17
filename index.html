@@ -45,10 +45,12 @@
             <input type="text" id="dados__representante__telefone"> 
             <!--Email-->
             <label for="dados__representante__email">Email</label>
-            <input type="text" id="dados__representante__email">
+            <input type="email" id="dados__representante__email">
             <!--Adicionar documento-->
             <label for="dados__representante__documento">Documento</label>
             <input type="file" id="dados__representante__documento"> 
+            <!--Botão de adicionar representante-->
+            <button type="submit">Adicionar representante</button>
         </form>
     </div>
 
@@ -98,8 +100,12 @@ Neste mo    mento, há interesse em participar de Mediação com a(o) psicóloga
     </div>
 
     <div class="descricao__fatos">
+        <h5>
+            4. Descrição dos fatos – descreva o ocorrido e seu contexto, destacando as condutas da(o) Psicóloga(o) que entende terem sido inadequadas no exercício de sua profissão. Informe o nome da instituição ou instituições em que ocorreu ou ocorreram o(s) fato(s) e o nome de outras(os) profissionais envolvidas(os) (se souber).
+Como deseja apresentar a descrição do(s) Fato(s)*
+        </h5>
         <label for="documento__texto">Digitar descrição do(s) Fato(s)</label>
-        <input type="text" id="documento__texto">
+        <textarea placeholder="Digitar descrição do(s) Fato(s)*"></textarea>
         <label for="documento__anexo">Anexar descrição do(s) Fato(s)</label>
         <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
     </div>
@@ -129,6 +135,10 @@ Neste mo    mento, há interesse em participar de Mediação com a(o) psicóloga
             </label>
         </form>
     </div>
+
+    <!--Botão para enviar formulário para o email da COE-->
+    <button type="submit">Enviar</button>
+
     <script src="app.js" defer></script>
 </body>
 </html>
