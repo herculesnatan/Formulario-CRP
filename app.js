@@ -11,9 +11,6 @@ function abrirForms() {
     }
 }
 
-function addProcurador() {
-    
-}
 
 
 // Capturar evento 
