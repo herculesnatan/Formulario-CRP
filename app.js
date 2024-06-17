@@ -14,6 +14,8 @@ function abrirForms() {
 function addProcurador() {
     
 }
+
+
 // Capturar evento 
 const botaoRepresentante = document.getElementById('botao__representante');
 botaoRepresentante.addEventListener('click', abrirForms);

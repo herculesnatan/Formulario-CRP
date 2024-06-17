@@ -45,12 +45,15 @@
             <input type="text" id="dados__representante__telefone"> 
             <!--Email-->
             <label for="dados__representante__email">Email</label>
-            <input type="text" id="dados__representante__email"> 
+            <input type="text" id="dados__representante__email">
+            <!--Adicionar documento-->
+            <label for="dados__representante__documento">Documento</label>
+            <input type="file" id="dados__representante__documento"> 
         </form>
     </div>
 
     <div class="procurador">
-        <h5>Tem Porcurador(a) <strong class="campo__obrigatorio">*</strong></h5>
+        <h5>Tem Procurador(a) <strong class="campo__obrigatorio">*</strong></h5>
         <label id="tem__procurador">
             <input type="radio"> Sim
         </label id="sem__procurador">
@@ -59,11 +62,22 @@
         </label>
     </div>
 
-    <div id="procurador__forms">
+    <div id="procurador__forms" class="add__procurador">
         <h6>Formulário Procurador</h6>
         <form>
+            <!--Nome do Procurador(a)-->
             <label for="nome__procurador">Nome completo</label>
             <input type="text" id="nome__procurador" name="nome__procurador">
+            <!--Nº da ordem-->
+            <label for="numero_ordem">N° ordem</label>
+            <input type="text" id="numero_ordem">
+            <!--Telefone para contato-->
+            <label type="text" for="telefone__contato">Telefone contato</label>
+            <input type="text" id="telefone__contato">
+            <!--Email procurador-->
+            <label type="text" for="email__contato">E-mail</label>
+            <input type="text" id="email__contato">
+
         </form>
     </div>
     <script src="app.js" defer></script>
