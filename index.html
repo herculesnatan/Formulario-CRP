@@ -85,7 +85,7 @@
 
         </form>
     </div>
-    <div>
+    <div class="mediacao">
         <h5>
             3. As Resoluções CFP n° 011/2019 (CPD), CFP nº 07/2016 e CRP-08 n° 008/2017 normatizam a Mediação e outros meios de solução consensual de conflitos junto aos processos éticos.
              O interesse na Mediação poderá ser suscitado em qualquer fase processual. Para saber mais, <a href="https://www.crp-01.org.br/">clique aqui</a>.
@@ -104,9 +104,16 @@ Neste mo    mento, há interesse em participar de Mediação com a(o) psicóloga
             4. Descrição dos fatos – descreva o ocorrido e seu contexto, destacando as condutas da(o) Psicóloga(o) que entende terem sido inadequadas no exercício de sua profissão. Informe o nome da instituição ou instituições em que ocorreu ou ocorreram o(s) fato(s) e o nome de outras(os) profissionais envolvidas(os) (se souber).
 Como deseja apresentar a descrição do(s) Fato(s)*
         </h5>
-        <label for="documento__texto">Digitar descrição do(s) Fato(s)</label>
+        <label for="documento__texto" id="descricao__denuncia">
+            <input type="radio" value="sim__texto">
+            Digitar descrição do(s) Fato(s)
+        </label>
         <textarea placeholder="Digitar descrição do(s) Fato(s)*"></textarea>
-        <label for="documento__anexo">Anexar descrição do(s) Fato(s)</label>
+
+
+        <label for="documento__anexo" id="anexos__denuncia">
+            <input type="radio" value="sim__anexo">Anexar descrição do(s) Fato(s)
+        </label>
         <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
     </div>
 
