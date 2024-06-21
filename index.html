@@ -61,8 +61,7 @@
           </label>
           <label>
             <input type="radio" name="tem__procurador" value="nao__procurador" onchange="toggleForm()" checked> Não
-          </label>
-          
+          </label> 
     </div>
 
     <div id="procurador__forms" class="add__procurador">
@@ -87,9 +86,30 @@
 
         </form>
     </div>
+
+    <!--Representado-->
+    <div>
+        <h5>Representado</h5>
+        <forms>
+            <!--
+            Acresentar um forms com pessoa júrica
+             - Nome de Instituição
+             - Número do registro no CRP-01  DF
+            -->
+
+            <!--
+            Forms de pessoa física
+             - Nome e CRP01
+            -->
+            <input type="text"> Nome
+            <input type="text"> CRP-01
+        </forms>
+        <!--Nome e CRP-->
+    </div>
+
     <div class="mediacao">
         <h5>
-            3. As Resoluções CFP n° 011/2019 (CPD), CFP nº 07/2016 e CRP-08 n° 008/2017 normatizam a Mediação e outros meios de solução consensual de conflitos junto aos processos éticos.
+            3. As Resoluções <a href="https://site.cfp.org.br/publicacao/codigo-de-processamento-disciplinar-cpd/">CFP n° 011/2019 (CPD)</a>, CFP nº 07/2016 e     normatizam a Mediação e outros meios de solução consensual de conflitos junto aos processos éticos.
              O interesse na Mediação poderá ser suscitado em qualquer fase processual. Para saber mais, <a href="https://www.crp-01.org.br/">clique aqui</a>.
 Neste mo    mento, há interesse em participar de Mediação com a(o) psicóloga(do) representada(o)?
         </h5>
@@ -114,7 +134,9 @@ Como deseja apresentar a descrição do(s) Fato(s)*
 
 
         <label for="documento__anexo" id="anexos__denuncia">
+            <!--Apenas PDF-->
             <input type="radio" value="sim__anexo">Anexar descrição do(s) Fato(s)
+            <p>Apenas PDF</p>
         </label>
         <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
     </div>
