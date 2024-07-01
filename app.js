@@ -1,28 +1,31 @@
-function abrirForms() {
-    const formRepresentante = document.getElementById("dados__representante");
+// app.js
 
-    // verificar se o forms está visível 
-    if (formRepresentante.style.display == 'none') {
-        // mostrar formulário escondido 
-        formRepresentante.style.display = 'block';
-    } else {
-        // esconder formulário
-        formRepresentante.style.display = 'none';
-    }
+document.getElementById('botao__representante').onclick = function() {
+  document.getElementById('dados__representante').style.display = 'block';
 }
 
-function toggleForm() {
-    var radio = document.querySelector('input[name="tem__procurador"]:checked');
-    var form = document.getElementById('procurador__forms');
-    
-    if (radio.value === "sim__procurador") {
-      form.style.display = 'block'; // Mostra o formulário
-    } else {
-      form.style.display = 'none'; // Oculta o formulário
-    }
-  }
+document.getElementById('botao__procurador').onclick = function() {
+  document.getElementById('procurador__forms').style.display = 'block';
+}
 
+function toggleProcuradorForm() {
+  const simProcurador = document.querySelector('input[name="tem__procurador"][value="sim"]').checked;
+  const procuradorButton = document.getElementById('procurador__button');
+  procuradorButton.style.display = simProcurador ? 'block' : 'none';
+}
 
-// Capturar evento 
-const botaoRepresentante = document.getElementById('botao__representante');
-botaoRepresentante.addEventListener('click', abrirForms);
+document.getElementById('botao__procurador').addEventListener('click', function() {
+  document.getElementById('procurador__forms_modal').style.display = 'block';
+});
+
+document.getElementById('close__procurador').addEventListener('click', function() {
+  document.getElementById('procurador__forms_modal').style.display = 'none';
+});
+
+document.getElementById('botao__representante').addEventListener('click', function() {
+  document.getElementById('dados__representante').style.display = 'block';
+});
+
+document.getElementById('close__representante').addEventListener('click', function() {
+  document.getElementById('dados__representante').style.display = 'none';
+});

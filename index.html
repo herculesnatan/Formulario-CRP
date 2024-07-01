@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles.css">
-    
     <title>Formulário CRP-01</title>
 </head>
 <body>
@@ -13,129 +12,104 @@
             (PARA REPRESENTAÇÕES CONTRA PESSOA JURÍDICA)
         </h1>   
     </div>
+
     <div class="representante">
-        <h5>
-            1. Dados de Identificação da(o) Representante
-        </h5>
+        <h5>1. Dados de Identificação da(o) Representante</h5>
         <button id="botao__representante">Clique para adicionar o representante</button>
-        <form id="dados__representante" class="representante__forms">
-            <!--Nome completo-->
-            <label for="dados__representante__nome">Nome completo</label>
-            <input type="text" id="dados__representante__nome">
-            <!--Nome social--> 
-            <label for="dados__representante__nome__social">Nome Social</label>
-            <input type="text" id="dados__representante__nome__social">
-            <!--Data de nascimento--> 
-            <label for="dados__representante__nascimento">Data de nascimento</label>
-            <input type="text" id="dados__representante__nascimento">
-            <!--Número de RG-->
-            <label for="dados__representante__RG">RG</label> 
-            <input type="text" id="dados__representante__RG">
-            <!--Número CFP--> 
-            <label for="dados__representante__CPF">CPF</label>
-            <input type="text" id="dados__representante__CPF">
-            <!--Endereço--> 
-            <label for="dados__representante__endereco">Endereço</label>
-            <input type="text" id="dados__representante__endereco">
-            <!--CEP-->
-            <label for="dados__representante__CEP">CEP</label> 
-            <input type="text" id="dados__representante__CEP"> 
-            <!--Telefone-->
-            <label for="dados__representante__telefone">Telefone</label>
-            <input type="text" id="dados__representante__telefone"> 
-            <!--Email-->
-            <label for="dados__representante__email">Email</label>
-            <input type="email" id="dados__representante__email">
-            <!--Adicionar documento-->
-            <label for="dados__representante__documento">Documento</label>
-            <input type="file" id="dados__representante__documento"> 
-            <!--Botão de adicionar representante-->
-            <button type="submit">Adicionar representante</button>
-        </form>
+        <div id="dados__representante" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close__representante">&times;</span>
+                <form class="representante__forms">
+                    <label for="dados__representante__nome">Nome completo</label>
+                    <input type="text" id="dados__representante__nome">
+                    <label for="dados__representante__nome__social">Nome Social</label>
+                    <input type="text" id="dados__representante__nome__social">
+                    <label for="dados__representante__nascimento">Data de nascimento</label>
+                    <input type="text" id="dados__representante__nascimento">
+                    <label for="dados__representante__RG">RG</label> 
+                    <input type="text" id="dados__representante__RG">
+                    <label for="dados__representante__CPF">CPF</label>
+                    <input type="text" id="dados__representante__CPF">
+                    <label for="dados__representante__endereco">Endereço</label>
+                    <input type="text" id="dados__representante__endereco">
+                    <label for="dados__representante__CEP">CEP</label> 
+                    <input type="text" id="dados__representante__CEP"> 
+                    <label for="dados__representante__telefone">Telefone</label>
+                    <input type="text" id="dados__representante__telefone"> 
+                    <label for="dados__representante__email">Email</label>
+                    <input type="email" id="dados__representante__email">
+                    <label for="dados__representante__documento">Documento</label>
+                    <input type="file" id="dados__representante__documento"> 
+                    <button type="submit">Adicionar representante</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <div class="procurador">
         <h5>Tem Procurador(a) <strong class="campo__obrigatorio">*</strong></h5>
-        <label id="tem__procurador">
-            <input type="radio" name="tem__procurador" value="sim__procurador" onchange="toggleForm()"> Sim
-          </label>
-          <label>
-            <input type="radio" name="tem__procurador" value="nao__procurador" onchange="toggleForm()" checked> Não
-          </label> 
+        <label>
+            <input type="radio" name="tem__procurador" value="sim" onchange="toggleProcuradorForm()"> Sim
+        </label>
+        <label>
+            <input type="radio" name="tem__procurador" value="nao" onchange="toggleProcuradorForm()" checked> Não
+        </label>
+        <div id="procurador__button" style="display: none;">
+            <button id="botao__procurador">Clique para adicionar o procurador</button>
+        </div>
     </div>
 
-    <div id="procurador__forms" class="add__procurador">
-        <h6>Formulário Procurador</h6>
-        <form>
-            <!--Nome do Procurador(a)-->
-            <label for="nome__procurador">Nome completo</label>
-            <input type="text" id="nome__procurador" name="nome__procurador">
-            <!--Nº da ordem-->
-            <label for="numero_ordem">N° ordem</label>
-            <input type="text" id="numero_ordem">
-            <!--Telefone para contato-->
-            <label type="text" for="telefone__contato">Telefone contato</label>
-            <input type="text" id="telefone__contato">
-            <!--Email procurador-->
-            <label type="text" for="email__contato">E-mail</label>
-            <input type="text" id="email__contato">
-            <!--Documento Procurador-->
-            <label type="file" for="documento__procurador">Documento</label>
-            <input type="file"  required accept="image/*, application/pdf" id="documento__procurador">
-            <button type="submit">Adicionar Procurador</button>
-
-        </form>
+    <div id="procurador__forms_modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close__procurador">&times;</span>
+            <form>
+                <label for="nome__procurador">Nome completo</label>
+                <input type="text" id="nome__procurador" name="nome__procurador">
+                <label for="numero_ordem">N° ordem</label>
+                <input type="text" id="numero_ordem">
+                <label for="telefone__contato">Telefone contato</label>
+                <input type="text" id="telefone__contato">
+                <label for="email__contato">E-mail</label>
+                <input type="text" id="email__contato">
+                <label for="documento__procurador">Documento</label>
+                <input type="file" required accept="image/*, application/pdf" id="documento__procurador">
+                <button type="submit">Adicionar Procurador</button>
+            </form>
+        </div>
     </div>
 
-    <!--Representado-->
     <div>
         <h5>Representado</h5>
-        <forms>
-            <!--
-            Acresentar um forms com pessoa júrica
-             - Nome de Instituição
-             - Número do registro no CRP-01  DF
-            -->
-
-            <!--
-            Forms de pessoa física
-             - Nome e CRP01
-            -->
-            <input type="text"> Nome
-            <input type="text"> CRP-01
-        </forms>
-        <!--Nome e CRP-->
+        <form>
+            <input type="text" placeholder="Nome de Instituição">
+            <input type="text" placeholder="Número do registro no CRP-01 DF">
+            <input type="text" placeholder="Nome">
+            <input type="text" placeholder="CRP-01">
+        </form>
     </div>
 
     <div class="mediacao">
         <h5>
-            3. As Resoluções <a href="https://site.cfp.org.br/publicacao/codigo-de-processamento-disciplinar-cpd/">CFP n° 011/2019 (CPD)</a>, CFP nº 07/2016 e     normatizam a Mediação e outros meios de solução consensual de conflitos junto aos processos éticos.
-             O interesse na Mediação poderá ser suscitado em qualquer fase processual. Para saber mais, <a href="https://www.crp-01.org.br/">clique aqui</a>.
-Neste mo    mento, há interesse em participar de Mediação com a(o) psicóloga(do) representada(o)?
+            3. As Resoluções <a href="https://site.cfp.org.br/publicacao/codigo-de-processamento-disciplinar-cpd/">CFP n° 011/2019 (CPD)</a>, CFP nº 07/2016 e normatizam a Mediação e outros meios de solução consensual de conflitos junto aos processos éticos. O interesse na Mediação poderá ser suscitado em qualquer fase processual. Para saber mais, <a href="https://www.crp-01.org.br/">clique aqui</a>. Neste momento, há interesse em participar de Mediação com a(o) psicóloga(do) representada(o)?
         </h5>
         <label id="sim__mediacao">
-            <input type="radio"> Sim
+            <input type="radio" name="mediacao"> Sim
         </label>
         <label id="nao__mediacao">
-            <input type="radio"> Não
+            <input type="radio" name="mediacao"> Não
         </label>
     </div>
 
     <div class="descricao__fatos">
         <h5>
-            4. Descrição dos fatos – descreva o ocorrido e seu contexto, destacando as condutas da(o) Psicóloga(o) que entende terem sido inadequadas no exercício de sua profissão. Informe o nome da instituição ou instituições em que ocorreu ou ocorreram o(s) fato(s) e o nome de outras(os) profissionais envolvidas(os) (se souber).
-Como deseja apresentar a descrição do(s) Fato(s)*
+            4. Descrição dos fatos – descreva o ocorrido e seu contexto, destacando as condutas da(o) Psicóloga(o) que entende terem sido inadequadas no exercício de sua profissão. Informe o nome da instituição ou instituições em que ocorreu ou ocorreram o(s) fato(s) e o nome de outras(os) profissionais envolvidas(os) (se souber). Como deseja apresentar a descrição do(s) Fato(s)*
         </h5>
         <label for="documento__texto" id="descricao__denuncia">
-            <input type="radio" value="sim__texto">
-            Digitar descrição do(s) Fato(s)
+            <input type="radio" name="descricao" value="sim__texto"> Digitar descrição do(s) Fato(s)
         </label>
         <textarea placeholder="Digitar descrição do(s) Fato(s)*"></textarea>
-
-
         <label for="documento__anexo" id="anexos__denuncia">
-            <!--Apenas PDF-->
-            <input type="radio" value="sim__anexo">Anexar descrição do(s) Fato(s)
+            <input type="radio" name="descricao" value="sim__anexo"> Anexar descrição do(s) Fato(s)
             <p>Apenas PDF</p>
         </label>
         <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
@@ -143,66 +117,57 @@ Como deseja apresentar a descrição do(s) Fato(s)*
 
     <div class="provas__documentais">
         <h5>
-            5. Provas documentais – Conforme definição do CPD, prova documental é qualquer documento ou material utilizado para provar 
-            determinado fato (registro feito mediante escritos, fotografias, filmagens, gravações, etc).
+            5. Provas documentais – Conforme definição do CPD, prova documental é qualquer documento ou material utilizado para provar determinado fato (registro feito mediante escritos, fotografias, filmagens, gravações, etc).
         </h5>
-        <p>limite de 10Mb por arquivo</p>
+        <p>Limite de 10Mb por arquivo</p>
         <label for="material__prova">Selecione os arquivos</label>
         <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
     </div>
 
-    <div class="testetunhas">
+    <div class="testemunhas">
         <h5>
-            6. Prova testemunhal – depoimento de pessoa(s) a respeito de fatos relevantes para o julgamento, com a finalidade de prová-los.
-            Há testetunhas?
+            6. Prova testemunhal – depoimento de pessoa(s) a respeito de fatos relevantes para o julgamento, com a finalidade de prová-los. Há testemunhas?
         </h5>
         <form>
             <label id="tem__testemunha">
-                <input type="radio"> Sim
+                <input type="radio" name="testemunha"> Sim
             </label>
             <label id="sem__testemunha">
-                <input type="radio"> Não
+                <input type="radio" name="testemunha"> Não
             </label>
         </form>
-        <form id="dados__testemunha" class="testemunha__forms">
-            <!--Nome completo-->
+        <div id="dados__testemunha" class="testemunha__forms">
             <label for="dados__testemunha__nome">Nome completo</label>
             <input type="text" id="dados__testemunha__nome">
-            <!--Nome social--> 
             <label for="dados__testemunha__nome__social">Nome Social</label>
             <input type="text" id="dados__testemunha__nome__social">
-            <!--Data de nascimento--> 
             <label for="dados__testemunha__nascimento">Data de nascimento</label>
             <input type="text" id="dados__testemunha__nascimento">
-            <!--Número de RG-->
             <label for="dados__testemunha__RG">RG</label> 
             <input type="text" id="dados__testemunha__RG">
-            <!--Número CFP--> 
             <label for="dados__testemunha__CPF">CPF</label>
             <input type="text" id="dados__testemunha__CPF">
-            <!--Endereço--> 
             <label for="dados__testemunha__endereco">Endereço</label>
             <input type="text" id="dados__testemunha__endereco">
-            <!--CEP-->
             <label for="dados__testemunha__CEP">CEP</label> 
             <input type="text" id="dados__testemunha__CEP"> 
-            <!--Telefone-->
             <label for="dados__testemunha__telefone">Telefone</label>
             <input type="text" id="dados__testemunha__telefone"> 
-            <!--Email-->
             <label for="dados__testemunha__email">Email</label>
             <input type="email" id="dados__testemunha__email">
-            <!--Adicionar documento-->
             <label for="dados__testemunha__documento">Documento</label>
             <input type="file" id="dados__testemunha__documento"> 
-            <!--Botão de adicionar representante-->
             <button type="submit">Adicionar testemunha</button>
-        </form>
+        </div>
     </div>
 
-    <!--Botão para enviar formulário para o email da COE-->
     <button type="submit">Enviar</button>
+
 
     <script src="app.js" defer></script>
 </body>
 </html>
+
+
+    
+
