@@ -19,7 +19,7 @@ h1, h5, h6 {
     margin: 0 0 10px 0;
 }
 
-.representante, .procurador, .mediacao, .descricao__fatos, .provas__documentais, .testetunhas {
+.representante, .procurador, .mediacao, .descricao__fatos, .provas__documentais, .testetunhas, .representado, .testemunhas,.testemunha__forms {
     background-color: white;
     margin: 20px auto;
     padding: 20px;
