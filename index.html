@@ -12,7 +12,7 @@
             (PARA REPRESENTAÇÕES CONTRA PESSOA JURÍDICA)
         </h1>   
     </div>
-
+    <form method="post">
     <div class="representante">
         <h5>1. Dados de Identificação da(o) Representante</h5>
         <button id="botao__representante">Clique para adicionar o representante</button>
@@ -81,8 +81,8 @@
     <div class="representado">
         <h5>Representado</h5>
         <form>
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="CRP-01">
+            <input type="text" placeholder="Nome de Instituição">
+            <input type="text" placeholder="Número do registro no CRP-01 DF">
         </form>
     </div>
 
@@ -102,15 +102,15 @@
         <h5>
             4. Descrição dos fatos – descreva o ocorrido e seu contexto, destacando as condutas da(o) Psicóloga(o) que entende terem sido inadequadas no exercício de sua profissão. Informe o nome da instituição ou instituições em que ocorreu ou ocorreram o(s) fato(s) e o nome de outras(os) profissionais envolvidas(os) (se souber). Como deseja apresentar a descrição do(s) Fato(s)*
         </h5>
-        <label for="documento__texto" id="descricao__denuncia">
-            <input type="radio" name="descricao" value="sim__texto"> Digitar descrição do(s) Fato(s)
+        <label>
+            <input type="radio" name="descricao" value="sim__texto" onchange="toggleDescricaoFatos()"> Digitar descrição do(s) Fato(s)
         </label>
-        <textarea placeholder="Digitar descrição do(s) Fato(s)*"></textarea>
-        <label for="documento__anexo" id="anexos__denuncia">
-            <input type="radio" name="descricao" value="sim__anexo"> Anexar descrição do(s) Fato(s)
-            <p>Apenas PDF</p>
+        <textarea id="descricao__texto" placeholder="Digitar descrição do(s) Fato(s)*" style="display: none;"></textarea>
+        <label>
+            <input type="radio" name="descricao" value="sim__anexo" onchange="toggleDescricaoFatos()"> Anexar descrição do(s) Fato(s)
+            
         </label>
-        <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
+        <input type="file" id="descricao__anexo" style="display: none;" accept="application/pdf" multiple>
     </div>
 
     <div class="provas__documentais">
@@ -119,49 +119,51 @@
         </h5>
         <p>Limite de 10Mb por arquivo</p>
         <label for="material__prova">Selecione os arquivos</label>
-        <input type="file" required accept="image/*, application/pdf" id="documento__anexo">
+        <input type="file" accept="image/*, application/pdf" multiple>
     </div>
 
-    <div class="testemunhas">
-        <h5>
-            6. Prova testemunhal – depoimento de pessoa(s) a respeito de fatos relevantes para o julgamento, com a finalidade de prová-los. Há testemunhas?
-        </h5>
+    <div class="testemunha">
+        <h5>6. Prova testemunhal – depoimento de pessoa(s) a respeito de fatos relevantes para o julgamento, com a finalidade de prová-los. Há testemunhas?</h5>
         <form>
             <label id="tem__testemunha">
-                <input type="radio" name="testemunha"> Sim
+                <input type="radio" name="testemunha" value="sim"> Sim
             </label>
             <label id="sem__testemunha">
-                <input type="radio" name="testemunha"> Não
+                <input type="radio" name="testemunha" value="nao"> Não
             </label>
         </form>
-        <div id="dados__testemunha" class="testemunha__forms">
-            <label for="dados__testemunha__nome">Nome completo</label>
-            <input type="text" id="dados__testemunha__nome">
-            <label for="dados__testemunha__nome__social">Nome Social</label>
-            <input type="text" id="dados__testemunha__nome__social">
-            <label for="dados__testemunha__nascimento">Data de nascimento</label>
-            <input type="text" id="dados__testemunha__nascimento">
-            <label for="dados__testemunha__RG">RG</label> 
-            <input type="text" id="dados__testemunha__RG">
-            <label for="dados__testemunha__CPF">CPF</label>
-            <input type="text" id="dados__testemunha__CPF">
-            <label for="dados__testemunha__endereco">Endereço</label>
-            <input type="text" id="dados__testemunha__endereco">
-            <label for="dados__testemunha__CEP">CEP</label> 
-            <input type="text" id="dados__testemunha__CEP"> 
-            <label for="dados__testemunha__telefone">Telefone</label>
-            <input type="text" id="dados__testemunha__telefone"> 
-            <label for="dados__testemunha__email">Email</label>
-            <input type="email" id="dados__testemunha__email">
-            <label for="dados__testemunha__documento">Documento</label>
-            <input type="file" id="dados__testemunha__documento"> 
-            <button type="submit">Adicionar testemunha</button>
+        <div id="dados__testemunha" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close__testemunha">&times;</span>
+                <form class="testemunha__forms">
+                    <label for="dados__testemunha__nome">Nome completo</label>
+                    <input type="text" id="dados__testemunha__nome">
+                    <label for="dados__testemunha__nome__social">Nome Social</label>
+                    <input type="text" id="dados__testemunha__nome__social">
+                    <label for="dados__testemunha__nascimento">Data de nascimento</label>
+                    <input type="text" id="dados__testemunha__nascimento">
+                    <label for="dados__testemunha__RG">RG</label> 
+                    <input type="text" id="dados__testemunha__RG">
+                    <label for="dados__testemunha__CPF">CPF</label>
+                    <input type="text" id="dados__testemunha__CPF">
+                    <label for="dados__testemunha__endereco">Endereço</label>
+                    <input type="text" id="dados__testemunha__endereco">
+                    <label for="dados__testemunha__CEP">CEP</label> 
+                    <input type="text" id="dados__testemunha__CEP"> 
+                    <label for="dados__testemunha__telefone">Telefone</label>
+                    <input type="text" id="dados__testemunha__telefone"> 
+                    <label for="dados__testemunha__email">Email</label>
+                    <input type="email" id="dados__testemunha__email">
+                    <label for="dados__testemunha__documento">Documento</label>
+                    <input type="file" id="dados__testemunha__documento"> 
+                    <button type="button" id="addTestemunhaBtn">Adicionar testemunha</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <button type="submit">Enviar</button>
-
-
+    <button type="submit" class="enviar__forms">Enviar</button>
+    </form>
+ 
     <script src="app.js" defer></script>
 </body>
 </html>
