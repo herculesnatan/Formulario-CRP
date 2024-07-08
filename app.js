@@ -97,3 +97,5 @@ document.getElementById('representanteForm').addEventListener('submit', function
       alert('Erro ao enviar os dados.');
   });
 });
+
+// Colocar um alert de tempo de resposta 
