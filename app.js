@@ -132,7 +132,7 @@ document.querySelector('.enviar__forms').addEventListener('click', function(even
   const provas__documentais = document.querySelector('.provas__documentais input[type="file"]').files;
 
   // Coletar dados das testemunhas 
-  const testemunha = {
+  const testemunhas = {
     nome: document.getElementById('dados__testemunha__nome').value,
     nome_social: document.getElementById('dados__testemunha__nome__social').value,
     nascimento: document.getElementById('dados__testemunha__nascimento').value,
