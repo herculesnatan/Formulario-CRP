@@ -1,5 +1,3 @@
-// app.js
-
 document.getElementById('botao__representante').onclick = function() {
   document.getElementById('dados__representante').style.display = 'block';
 }
@@ -80,22 +78,88 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
-document.getElementById('representanteForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  fetch('/submit', {
-      method: 'POST',
-      body: formData
-  }).then(response => {
-      if (response.ok) {
-          alert('Dados enviados com sucesso!');
-      } else {
-          alert('Erro ao enviar os dados.');
-      }
-  }).catch(error => {
-      console.error('Erro:', error);
-      alert('Erro ao enviar os dados.');
-  });
-});
+// Capturando os dados do formulário 
 
-// Colocar um alert de tempo de resposta 
+document.querySelector('.enviar__forms').addEventListener('click', function(event) {
+  event.preventDefault();
+
+  // Coletar os dados do representante 
+  const representante = {
+    nome: document.getElementById('dados__representante__nome').value,
+    nome_social: document.getElementById('dados__representante__nome__social').value,
+    nascimento: document.getElementById('dados__representate__nasicmento').value,
+    rg: document.getElementById('dados__representate__RG').value,
+    cpf: document.getElementById('dados__representante__CPF').value,
+    enderaco: document.getElementById('dados__representante__endereco').value,
+    cep: document.getElementById('dados__representante__CEP').value,
+    telefone: document.getElementById('dados__representante__telefone').value,
+    email: document.getElementById('dados__representante__email').value,
+    documento: document.getElementById('dados__representante__documento').files[0]
+  };
+
+  // Se tiver Procurador, coletar dados
+  const temProcurador = document.querySelector('input[name="tem__procurador"]:checked').value;
+  let procurador = {};
+  if (temProcurador === "sim") {
+    procurador = {
+      nome: document.getElementById('nome__procurador').value,
+      numero_ordem: document.getElementById('numero__ordem').value,
+      telefone: document.getElementById('telefone__contato').value,
+      email: document.getElementById('email__contato').value,
+      documento: document.getElementById('documento__procurador').files[0]
+    };
+  } 
+
+  // Dados do representado 
+  const representado = {
+    instituicao: document.querySelector('.representado input[type="text"]:nth-child(1)').value,
+    registro: document.querySelector('.representado input[type="text"]:nth-child(2)').value
+  }
+
+  // Dados da mediação 
+  const mediacao = document.querySelector('input[name="mediacao"]:checked').value;
+
+  // Dados de descrição de fatos 
+  let descricao = '';
+  if (document.querySelector('input[name="descricao"]:checked').value === 'sim__texto') {
+    descricao = document.getElementById('descricao__texto').value;
+  } else {
+    descricao = document.getElementById('descricao__anexo').files[0];
+
+  }
+
+  // Coletar provas documentais 
+  const provas__documentais = document.querySelector('.provas__documentais input[type="file"]').files;
+
+  // Coletar dados das testemunhas 
+  const testemunha = {
+    nome: document.getElementById('dados__testemunha__nome').value,
+    nome_social: document.getElementById('dados__testemunha__nome__social').value,
+    nascimento: document.getElementById('dados__testemunha__nascimento').value,
+    rg: document.getElementById('dados__testemunha__RG').value,
+    cpf: document.getElementById('dados__testemunha__CPF').value,
+    enderaco: document.getElementById('dados__testemunha__endereco').value,
+    cep: document.getElementById('dados__testemunha__CEP').value,
+    telefone: document.getElementById('dados__testemunha__telefone').value,
+    email: document.getElementById('dados__testemunha__email').value,
+    documento: document.getElementById('dados__testemunha__documento').files[0]
+  }
+
+  // Montando objeto com todos os dados
+  const fromData = {
+    representante, 
+    procurador,
+    representado, 
+    mediacao, 
+    descricao,
+    provas, 
+    testemunhas
+  };
+
+  // enviar formulário
+  enviarFomulario(fromData); 
+})
+
+ 
+// Criar função para enviar o forms
+
