@@ -9,10 +9,10 @@ app.use(cors()); // Adicione o middleware CORS
 
 // Configurando o Nodemailer
 const transporte = nodemailer.createTransport({
-    service: 'localweb',
+    service: 'gmail',
     auth: {
-        user: 'informatica@crp-01.org.br',
-        pass: 'CRP01@informatica'
+        user: 'estagiohercules@gmail.com',
+        pass: 'CADEMINHASENHAAAA'
     }
 });
 
